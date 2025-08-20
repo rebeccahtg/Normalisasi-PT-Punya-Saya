@@ -1,0 +1,32 @@
+PT. PUNYA Surya
+
+								TAHAP UNF
+
+TrPenjualan = NamaPembeli + KodePembeli + AlamatPembeli + NoPenjualan + TglNota + JenisPenjualan + KodeJenisPenjualan + 
+{KodeBarang + NamaBarang + Kuantitas + Satuan + Harga + Jumlah + Total + Bayar +Sisa + Kembali} + Bagian + NamaKaryawan + KodeKaryawan + Nama Penerima 
+
+								TAHAP 1NF 
+
+TrPenjualan =  NamaPembeli + @KodePembeli + AlamatPembeli + @NoPenjualan + Tgl + JenisPenjualan + @KodeJenisPenjualan + @KodeBarang + NamaBarang + Satuan + Qty + Harga +
+Bagian + NamaKaryawan + @KodeKaryawan + NamaPenerima +
+TelpPembeli + AlamatKaryawan + TelpKaryawan + KodeBagian 
+
+								TAHAP 2NF
+
+TrHeaderPenjualan = NamaPembeli + @KodePembeli + AlamatPembeli + @NoPenjualan + Tgl + JenisPenjualan + @KodeJenisPenjualan + Bagian + NamaKaryawan + 
+@KodeKaryawan + NamaPenerima + TelpPembeli + AlamatKaryawan + TelpKaryawan + KodeBagian 
+
+TrDetailPenjualan = @KodeBarang +  @KodePembeli + Qty
+
+MsPenjualan = @KodeBarang + NamaBarang + Satuan  + Harga
+
+								TAHAP 3NF
+
+MsPelanggan =  @KodePembeli + NamaPembeli + AlamatPembeli + TelpPembeli
+MsKaryawan = @KodeKaryawan + NamaKaryawan + #KodeBagian  + AlamatKaryawan + TelpKaryawan
+MsBarang = @KodeBarang + NamaBarang + Satuan  + Harga
+MsTrHeaderPenjualan = @NoPenjualan + Tgl + #KodePembeli + @KodeKaryawan + KodeJenisPenjualan 
+MsDetailPenjualan = @NoPenjualan + #KodeBarang + Qty
+
+
+
